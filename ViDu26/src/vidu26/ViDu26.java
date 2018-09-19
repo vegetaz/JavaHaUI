@@ -22,7 +22,7 @@ public class ViDu26 {
         n = sn.nextInt();
         dsNV = new NhanVien[n]; //Cấp phát mảng
         for (int i = 0; i < n; i++) {
-            dsNV[i] = new NhanVien();
+            dsNV[i] = new NhanVien(); //Cấp phát đối tượng
             dsNV[i].nhap();
         }
         System.out.println("Danh sách: ");
