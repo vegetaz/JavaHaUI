@@ -43,10 +43,12 @@ public class NhanVien {
         dob = new NgayThang();
         dob.nhap();
     }
+    //Xuất tiêu đề
+    public static void xuatTieuDe(){
+        System.out.printf("%25s%25s\n", "Họ tên", "Ngày sinh");
+    }
     //Hàm xuất
     public void xuat() {
-        System.out.println("Thông tin cá nhân");
-        System.out.println("Họ tên: " + name);
-        System.out.println("Ngày sinh: " + dob);
+        System.out.printf("%25s%25s\n", name, dob);
     }
 }
