@@ -12,7 +12,7 @@ public class NhapXuatMang {
     public static void main(String[] args) {
         int n;
         Scanner sn = new Scanner(System.in);
-        System.out.println("Nhập vào số phần tử của mảng: ");
+        System.out.print("Nhập vào số phần tử của mảng: ");
         n = sn.nextInt();
         int a[] = new int[n];
         for (int i = 0; i < n; i++) {
