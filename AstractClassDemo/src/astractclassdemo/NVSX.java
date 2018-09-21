@@ -28,10 +28,10 @@ public class NVSX extends NhanVien {
     public void setSanPham(int sanPham) {
         this.sanPham = sanPham;
     }
-    //@Override
+    @Override
     public float tinhLuong() {
         float luong = 0f;
-        luong = sanPham*TIEN;
+        luong = sanPham * TIEN;
         return luong;
     }
     
