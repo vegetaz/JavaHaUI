@@ -15,7 +15,10 @@ public class Bai11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        GiangVien gv = new GVCoHuu();
+        gv.nhapThongTin();
+        gv.inThongTin();
+        gv.tinhLuong();
     }
 
 }
