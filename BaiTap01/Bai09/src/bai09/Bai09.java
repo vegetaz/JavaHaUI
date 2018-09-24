@@ -37,9 +37,9 @@ public class Bai09 {
                     a[i] = new Rectangle(cd, cr, "Rectangle");
                     break;
                 case 2:
-                    System.out.println("base: ");
+                    System.out.print("base: ");
                     int d = sn.nextInt();
-                    System.out.println("height: ");
+                    System.out.print("height: ");
                     int cc = sn.nextInt();
                     sn.nextLine();
                     a[i] = new Triangle(d, cc, "Triangle");
@@ -50,17 +50,19 @@ public class Bai09 {
 
     public void xuat() {
         System.out.println("Rectangle");
-        System.out.printf("%15d%15d%15d", "length", "width", "area");
+        //System.out.printf("%15s%15s%15s", "length", "width", "area");
         for (int i = 0; i < a.length; i++) {
             if (a[i] instanceof Rectangle) {
-                System.out.printf("\n%15d%15d%15d", a[i].getLength(), a[i].getWidth(), a[i].getArea());
+                //System.out.printf("\n%15s", /*a[i].getLength(), a[i].getWidth(),*/ a[i].getArea());
+                System.out.println("Area of " + (i + 1) + " is: " + a[i].getArea());
             }
         }
         System.out.println("Triangle");
-        System.out.printf("%15d%15d%15d", "base", "height", "area");
+        //System.out.printf("%15s%15s%15s", "base", "height", "area");
         for (int i = 0; i < a.length; i++) {
             if (a[i] instanceof Triangle) {
-                System.out.printf("\n%15d%15d%15d", a[i].getBase(), a[i].getHeight(), a[i].getArea());
+                //System.out.printf("\n%15s", /*a[i].getBase(), a[i].getHeight(),*/ a[i].getArea());
+                System.out.println("Area of " + (i + 1) + " is: " + a[i].getArea());
             }
         }
     }
