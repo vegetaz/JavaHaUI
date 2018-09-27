@@ -27,22 +27,25 @@ public class Bai09 {
         for (int i = 0; i < a.length; i++) {
             System.out.print("1. Rectangle, 2. Triangle: ");
             int choice = sn.nextInt();
+            sn.nextLine();
+            System.out.print("Colour: ");
+            String color = sn.nextLine();
             switch (choice) {
                 case 1:
-                    System.out.print("length: ");
-                    int cd = sn.nextInt();
-                    System.out.print("width: ");
-                    int cr = sn.nextInt();
+                    System.out.print("Length: ");
+                    int length = sn.nextInt();
+                    System.out.print("Width: ");
+                    int width = sn.nextInt();
                     sn.nextLine();
-                    a[i] = new Rectangle(cd, cr, "Rectangle");
+                    a[i] = new Rectangle(length, width, color);
                     break;
                 case 2:
-                    System.out.print("base: ");
-                    int d = sn.nextInt();
-                    System.out.print("height: ");
-                    int cc = sn.nextInt();
+                    System.out.print("Base: ");
+                    int base = sn.nextInt();
+                    System.out.print("Height: ");
+                    int height = sn.nextInt();
                     sn.nextLine();
-                    a[i] = new Triangle(d, cc, "Triangle");
+                    a[i] = new Triangle(base, height, color);
                     break;
             }
         }
@@ -50,19 +53,18 @@ public class Bai09 {
 
     public void xuat() {
         System.out.println("Rectangle");
-        //System.out.printf("%15s%15s%15s", "length", "width", "area");
+        System.out.printf("%-15s%-15s%-15s%-15s", "Colour", "Length", "Width", "Area");
         for (int i = 0; i < a.length; i++) {
             if (a[i] instanceof Rectangle) {
-                //System.out.printf("\n%15s", /*a[i].getLength(), a[i].getWidth(),*/ a[i].getArea());
-                System.out.println("Area of " + (i + 1) + " is: " + a[i].getArea());
+                System.out.printf("\n%-15s%-15s%-15s%-15s", a[i].getColor(), ((Rectangle) a[i]).getLength(), ((Rectangle) a[i]).getWidth(), a[i].getArea());
             }
         }
+        System.out.println();
         System.out.println("Triangle");
-        //System.out.printf("%15s%15s%15s", "base", "height", "area");
+        System.out.printf("%-15s%-15s%-15s%-15s", "Colour", "Base", "Height", "Area");
         for (int i = 0; i < a.length; i++) {
             if (a[i] instanceof Triangle) {
-                //System.out.printf("\n%15s", /*a[i].getBase(), a[i].getHeight(),*/ a[i].getArea());
-                System.out.println("Area of " + (i + 1) + " is: " + a[i].getArea());
+                System.out.printf("\n%-15s%-15s%-15s%-15s", a[i].getColor(), ((Triangle) a[i]).getBase(), ((Triangle) a[i]).getHeight(), a[i].getArea());
             }
         }
     }
