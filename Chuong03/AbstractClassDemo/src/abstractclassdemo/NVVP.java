@@ -45,7 +45,7 @@ public class NVVP extends NhanVien {
         this.soNgayNghi = soNgayNghi;
     }
 
-    // @Override
+    @Override
     public float tinhLuong() {
         float luong = 0f;
         luong = mucLuong - soNgayNghi * PHAT;
