@@ -46,6 +46,7 @@ public class HocVienLT extends HocVien {
         this.donGiaLT = donGiaLT;
     }
 
+    @Override
     public void setUuTien(int uuTien) {
         this.uuTien = uuTien;
     }
