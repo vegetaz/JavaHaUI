@@ -15,11 +15,18 @@ public class Bai10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sn = new Scanner(System.in);
-        HocVien dh = new HocVienDH();
-        dh.nhapThongTin();
-        dh.hocPhi();
-        dh.inThongTin();  
+        //
+//        HocVienDH dh = new HocVienDH();
+//        dh.nhapThongTin();
+//        dh.setSoBuoi(25);
+//        dh.setDonGiaDH(150000);
+//        dh.inThongTin();
+        //
+        HocVienLT lt = new HocVienLT();
+        lt.nhapThongTin();
+        lt.setDonGiaLT(250000);
+        lt.setSoBuoi(25);
+        lt.inThongTin();
     }
     
 }

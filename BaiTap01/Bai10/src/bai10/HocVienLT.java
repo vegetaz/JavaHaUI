@@ -52,16 +52,14 @@ public class HocVienLT extends HocVien {
     }
     
     @Override
-    public void hocPhi() {
-        float hocphi;
-        switch (uuTien) {
-            case 1:
-                hocphi = soBuoi * donGiaLT - ut1;
-                break;
-            case 2:
-                hocphi = soBuoi * donGiaLT - ut2;
-                break;
+    public float hocPhi() {
+        float hocphi = 0;
+        if (uuTien == 1) {
+            hocphi = soBuoi * donGiaLT - ut1;
+        } else {
+            hocphi = soBuoi * donGiaLT - ut2;
         }
+        return hocphi;
     }
     
 }

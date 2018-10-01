@@ -61,25 +61,23 @@ public abstract class HocVien {
         diaChi = sn.nextLine();
         System.out.print("Loại ưu tiên: ");
         uuTien = sn.nextInt();
-        System.out.print("Loại chương trình đăng ký: ");
+        System.out.println("Loại chương trình đăng ký");
+        System.out.print("1. Đồ Hoạ, 2. Lập Trình: ");
         loaiChuongTrinh = sn.nextInt();
     }
     
-    public abstract void hocPhi();
+    public abstract float hocPhi();
     
     public void inThongTin() {
         System.out.println("Thông tin học viên");
         System.out.println("Họ tên: " + this.hoTen);
         System.out.println("Địa chỉ: " + this.diaChi);
-        System.out.println("Chương trình: " + this.loaiChuongTrinh);
-        System.out.println("Ưu tiên: " + this.uuTien);
-        switch(loaiChuongTrinh) {
-            case 1:
-                HocVienDH dh = new HocVienDH();
-                dh.hocPhi();
-            case 2:
-                HocVienLT lt = new HocVienLT();
-                lt.hocPhi();
+        if (loaiChuongTrinh == 1) {
+            System.out.println("Chương trình: " + "1. Đồ Hoạ");
+        } else {
+            System.out.println("Chương trình: " + "2. Lập Trình");
         }
+        System.out.println("Ưu tiên: " + this.uuTien);
+        System.out.println("Học phí: " + hocPhi());
     }
 }
