@@ -14,17 +14,17 @@ import java.util.Scanner;
 public abstract class Nguoi {
 
     private String hoTen;
-    private String dob;
-    private String address;
-    private Integer loaiSV;
+    private String ngaySinh;
+    private String diaChi;
+    private int loaiSV;
 
     public Nguoi() {
     }
 
-    public Nguoi(String hoTen, String dob, String address, Integer loaiSV) {
+    public Nguoi(String hoTen, String ngaySinh, String diaChi, int loaiSV) {
         this.hoTen = hoTen;
-        this.dob = dob;
-        this.address = address;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = diaChi;
         this.loaiSV = loaiSV;
     }
 
@@ -32,15 +32,15 @@ public abstract class Nguoi {
         return hoTen;
     }
 
-    public String getDob() {
-        return dob;
+    public String getNgaySinh() {
+        return ngaySinh;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public Integer getLoaiSV() {
+    public int getLoaiSV() {
         return loaiSV;
     }
 
@@ -48,15 +48,15 @@ public abstract class Nguoi {
         this.hoTen = hoTen;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
-    public void setLoaiSV(Integer loaiSV) {
+    public void setLoaiSV(int loaiSV) {
         this.loaiSV = loaiSV;
     }
 
@@ -65,29 +65,27 @@ public abstract class Nguoi {
         System.out.print("Họ tên: ");
         hoTen = sn.nextLine();
         System.out.print("Ngày sinh: ");
-        dob = sn.nextLine();
+        ngaySinh = sn.nextLine();
         System.out.print("Địa chỉ: ");
-        address = sn.nextLine();
-        System.out.printf("1. Sinh viên cao đẳng nghề\n"
-                + "2. Sinh viên cao đẳng chính quy: \n");
+        diaChi = sn.nextLine();
+        System.out.println("Loại sinh viên");
+        System.out.print("1. SVCDN, 2. SVCDCQ: ");
         loaiSV = sn.nextInt();
     }
 
-    public abstract void tinhDiem();
+    public abstract float tinhDiem();
 
-    public void xuatThongTin() {
+    public void inThongTin() {
         System.out.println("Thông tin sinh viên");
         System.out.println("Họ tên: " + hoTen);
-        System.out.println("Ngày sinh: " + dob);
-        System.out.println("Địa chỉ: " + address);
-        switch (loaiSV) {
-            case 1:
-                System.out.println("Sinh viên cao đẳng nghề");
-                break;
-            case 2:
-                System.out.println("Sinh viên cao đẳng chính quy");
-                break;
+        System.out.println("Ngày sinh: " + hoTen);
+        System.out.println("Địa chỉ: " + hoTen);
+        if (loaiSV == 1) {
+            System.out.println("Sinh viên cao đẳng nghề");
+        } else {
+            System.out.println("Sinh viên cao đẳng chính quy");
+
         }
-        System.out.println("Điểm trung bình: ");
+        System.out.println("Điểm trung bình: " + tinhDiem());
     }
 }
