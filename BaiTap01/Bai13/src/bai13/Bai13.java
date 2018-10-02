@@ -17,7 +17,7 @@ public class Bai13 {
     public static void main(String[] args) {
         //
         LaoDongPhoThong ld1 = new LaoDongPhoThong();
-        ld1.setDonGiaNC(150000);
+        ld1.setDonGiaNC(250000);
         ld1.setSoNgayCong(26);
         ld1.nhapThongTin();
         ld1.tinhLuong();
@@ -25,10 +25,10 @@ public class Bai13 {
         //
         KiSu ld2 = new KiSu();
         ld2.setSoNgayCong(26);
-        ld2.setLuongCB(2500000);
+        ld2.setLuongCB(1500000);
         ld2.setHeSoLuong(25000);
         ld2.nhapThongTin();
         ld2.tinhLuong();
         ld2.inThongTin();
-    }    
+    }
 }
