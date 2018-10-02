@@ -13,7 +13,6 @@ import java.util.Calendar;
  */
 public class GVCoHuu extends GiangVien {
 
-    private float luongThang;
     private float luongCB;
     private float heSoLuong;
     private int namVaoLam;
@@ -21,16 +20,11 @@ public class GVCoHuu extends GiangVien {
     public GVCoHuu() {
     }
 
-    public GVCoHuu(float luongThang, float luongCB, float heSoLuong, int namVaoLam, String hoTen, String diaChi, int loaiGiangVien) {
+    public GVCoHuu(float luongCB, float heSoLuong, int namVaoLam, String hoTen, String diaChi, int loaiGiangVien) {
         super(hoTen, diaChi, loaiGiangVien);
-        this.luongThang = luongThang;
         this.luongCB = luongCB;
         this.heSoLuong = heSoLuong;
         this.namVaoLam = namVaoLam;
-    }
-
-    public float getLuongThang() {
-        return luongThang;
     }
 
     public float getLuongCB() {
@@ -43,10 +37,6 @@ public class GVCoHuu extends GiangVien {
 
     public int getNamVaoLam() {
         return namVaoLam;
-    }
-
-    public void setLuongThang(float luongThang) {
-        this.luongThang = luongThang;
     }
 
     public void setLuongCB(float luongCB) {
@@ -63,6 +53,7 @@ public class GVCoHuu extends GiangVien {
 
     @Override
     public float tinhLuong() {
+        float luongThang = 0;
         Calendar cd = Calendar.getInstance();
         int nht = cd.get(Calendar.YEAR);
         int namLamViec = nht - namVaoLam;

@@ -15,10 +15,12 @@ public class Bai11 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GiangVien gv = new GVCoHuu();
+        GVCoHuu gv = new GVCoHuu();
+        gv.setHeSoLuong(3500);
+        gv.setLuongCB(5500000);
         gv.nhapThongTin();
-        gv.inThongTin();
         gv.tinhLuong();
+        gv.inThongTin();
     }
 
 }
