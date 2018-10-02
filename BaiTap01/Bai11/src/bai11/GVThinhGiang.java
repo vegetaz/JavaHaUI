@@ -11,22 +11,16 @@ package bai11;
  */
 public class GVThinhGiang extends GiangVien {
 
-    private float luongThang;
     private int soTietDay;
     private float donGia;
 
     public GVThinhGiang() {
     }
 
-    public GVThinhGiang(float luongThang, int soTietDay, float donGia, String hoTen, String diaChi, int loaiGiangVien) {
+    public GVThinhGiang(int soTietDay, float donGia, String hoTen, String diaChi, int loaiGiangVien) {
         super(hoTen, diaChi, loaiGiangVien);
-        this.luongThang = luongThang;
         this.soTietDay = soTietDay;
         this.donGia = donGia;
-    }
-
-    public float getLuongThang() {
-        return luongThang;
     }
 
     public int getSoTietDay() {
@@ -35,10 +29,6 @@ public class GVThinhGiang extends GiangVien {
 
     public float getDonGia() {
         return donGia;
-    }
-
-    public void setLuongThang(float luongThang) {
-        this.luongThang = luongThang;
     }
 
     public void setSoTietDay(int soTietDay) {
@@ -51,6 +41,7 @@ public class GVThinhGiang extends GiangVien {
 
     @Override
     public float tinhLuong() {
+        float luongThang = 0;
         float thuNhap = (float) 0.15 * soTietDay * donGia;
         luongThang = (float) soTietDay * donGia - thuNhap;
         return luongThang;

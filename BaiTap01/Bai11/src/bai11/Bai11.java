@@ -21,6 +21,13 @@ public class Bai11 {
         gv.nhapThongTin();
         gv.tinhLuong();
         gv.inThongTin();
+        //
+        GVThinhGiang gv2 = new GVThinhGiang();
+        gv2.setDonGia(150000);
+        gv2.setSoTietDay(125);
+        gv2.nhapThongTin();
+        gv2.tinhLuong();
+        gv2.inThongTin();
     }
 
 }
