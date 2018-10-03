@@ -52,6 +52,7 @@ public class Bai09 {
     }
 
     public void xuat() {
+        System.out.println("The information of Shape");
         System.out.println("Rectangle");
         System.out.printf("%-15s%-15s%-15s%-15s", "Colour", "Length", "Width", "Area");
         for (int i = 0; i < a.length; i++) {
@@ -67,6 +68,7 @@ public class Bai09 {
                 System.out.printf("\n%-15s%-15s%-15s%-15s", a[i].getColor(), ((Triangle) a[i]).getBase(), ((Triangle) a[i]).getHeight(), a[i].getArea());
             }
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
