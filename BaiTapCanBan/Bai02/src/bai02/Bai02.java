@@ -59,6 +59,8 @@ public class Bai02 {
                     String congViec = sn.nextLine();
                     canbo[i] = new NhanVien(hoTen, namSinh, gioiTinh, diaChi, congViec);
                     break;
+                default:
+                    System.out.println("Lựa chọn không đúng!");
             }
         }
     }
@@ -101,13 +103,34 @@ public class Bai02 {
     }
 
     public static void main(String[] args) {
-        System.out.print("Nhập vào số lượng Cán Bộ: ");
         Scanner sn = new Scanner(System.in);
+        System.out.println("Mời bạn nhập tuỳ chọn:");
+        System.out.println("1. Nhập thông tin mới cho Cán Bộ");
+        System.out.println("2. Tìm kiếm Cán Bộ theo họ tên");
+        System.out.println("3. In ra thông tin Cán Bộ");
+        System.out.println("4. Thoát chương trình");
+        System.out.print("Lựa chọn: ");
+        int luachon = sn.nextInt();
+        System.out.print("Nhập vào số lượng Cán Bộ: ");
         int sl = sn.nextInt();
         Bai02 b2 = new Bai02(sl);
-        b2.nhapTT();
-        b2.xuatTT();
-
+        sn.nextLine();
+        switch (luachon) {
+            case 1:
+                System.out.println("Nhập thông tin mới cho cán bộ");
+                b2.nhapTT();
+                break;
+            case 2:
+                System.out.println("Tìm kiếm Cán Bộ theo họ tên");
+                System.out.println("Chức năng đang được phát triển");
+                System.out.println("Mời bạn quay lại sau!");
+                break;
+            case 3:
+                System.out.println("In ra thông tin Cán Bộ");
+                b2.xuatTT();
+                break;
+        }
+        while (luachon != 4);
     }
 
 }
