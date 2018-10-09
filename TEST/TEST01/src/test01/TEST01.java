@@ -25,7 +25,6 @@ sản xuất ứng với 3 loại).
 mỗi loại khách hàng).
  */
 package test01;
-
 /**
  *
  * @author veget
@@ -36,7 +35,16 @@ public class TEST01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        KhachHangSinhHoat khsh = new KhachHangSinhHoat();
+        KhachHangSanXuat khsx = new KhachHangSanXuat();
+        System.out.println("***");
+        khsh.setChiSoCuoi(500);
+        khsh.setChiSoDau(200);
+        System.out.println("Tiền điện khách hàng sinh hoạt phải trả: " + khsh.tienDien());
+        System.out.println("--------------------------------------");
+        khsx.setChiSoCuoi(500);
+        khsx.setChiSoDau(200);
+        khsx.setLoaihinhSX(3);
+        System.out.println("Tiền điện khách hàng sản xuất loại " + khsx.getLoaihinhSX() + " phải trả là: " + khsx.tienDien());
     }
-
 }

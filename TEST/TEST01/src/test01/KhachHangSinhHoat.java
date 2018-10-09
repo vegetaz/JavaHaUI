@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test01;
-
 /**
  *
  * @author veget
@@ -12,7 +6,10 @@ package test01;
 public class KhachHangSinhHoat extends KhachHang {
 
     int soDienTieuThu;
-    final int BASE1 = 1000;
+    final int BASE = 50;
+    final int RATE1 = 1000;
+    final int RATE2 = 1500;
+    final int RATE3 = 2000;
     double tienDien;
     private String gioiTinh;
 
@@ -20,7 +17,9 @@ public class KhachHangSinhHoat extends KhachHang {
         //
     }
 
-    public KhachHangSinhHoat(String maKhachHang, String tenKhachHang, String diaChi, int soDienThoai, int chiSoDau, int chiSoCuoi, String gioiTinh) {
+    public KhachHangSinhHoat(String maKhachHang, String tenKhachHang,
+            String diaChi, int soDienThoai, int chiSoDau, int chiSoCuoi,
+            String gioiTinh) {
         super(maKhachHang, tenKhachHang, diaChi, soDienThoai, chiSoDau, chiSoCuoi);
         this.gioiTinh = gioiTinh;
     }
@@ -37,11 +36,11 @@ public class KhachHangSinhHoat extends KhachHang {
     public double tienDien() {
         soDienTieuThu = getChiSoCuoi() - getChiSoDau();
         if (soDienTieuThu > 0 && soDienTieuThu <= 50) {
-            tienDien = soDienTieuThu * BASE1;
+            tienDien = soDienTieuThu * RATE1;
         } else if (soDienTieuThu <= 100) {
-            tienDien = soDienTieuThu * BASE1;
+            tienDien = BASE * RATE1 + (soDienTieuThu - BASE) * RATE2;
         } else {
-            tienDien = soDienTieuThu * BASE1;
+            tienDien = BASE * RATE1 + BASE * RATE2 + (soDienTieuThu - 2 * BASE) * RATE3;
         }
         return tienDien;
     }
