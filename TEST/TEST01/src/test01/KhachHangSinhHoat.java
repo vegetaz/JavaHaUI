@@ -1,4 +1,5 @@
 package test01;
+
 /**
  *
  * @author veget
@@ -11,7 +12,6 @@ public class KhachHangSinhHoat extends KhachHang {
     final int RATE2 = 1500;
     final int RATE3 = 2000;
     double tienDien;
-    private String gioiTinh;
 
     public KhachHangSinhHoat() {
         //
@@ -21,15 +21,6 @@ public class KhachHangSinhHoat extends KhachHang {
             String diaChi, int soDienThoai, int chiSoDau, int chiSoCuoi,
             String gioiTinh) {
         super(maKhachHang, tenKhachHang, diaChi, soDienThoai, chiSoDau, chiSoCuoi);
-        this.gioiTinh = gioiTinh;
-    }
-
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
-
-    public String getGioiTinh() {
-        return gioiTinh;
     }
 
     @Override

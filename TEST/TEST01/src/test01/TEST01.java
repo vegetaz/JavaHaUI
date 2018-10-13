@@ -25,6 +25,9 @@ sản xuất ứng với 3 loại).
 mỗi loại khách hàng).
  */
 package test01;
+
+import java.util.Scanner;
+
 /**
  *
  * @author veget
@@ -34,17 +37,89 @@ public class TEST01 {
     /**
      * @param args the command line arguments
      */
+    KhachHang kh[];
+
+    public TEST01(int n) {
+        kh = new KhachHang[n];
+    }
+    Scanner sn = new Scanner(System.in);
+
+    public void nhap() {
+        for (int i = 0; i < kh.length; i++) {
+            System.out.println("Khách hàng thứ " + (i + 1));
+            System.out.print("Mã Khách Hàng: ");
+            String maKhachHang = sn.nextLine();
+            System.out.print("Tên Khách Hàng: ");
+            String tenKhachHan = sn.nextLine();
+            System.out.print("Địa Chỉ: ");
+            String diaChi = sn.nextLine();
+            System.out.print("Số Điện Thoại: ");
+            int soDienThoai = sn.nextInt();
+            System.out.print("Chỉ Số Đầu: ");
+            int chiSoDau = sn.nextInt();
+            System.out.print("Chỉ Số Cuối: ");
+            int chiSoCuoi = sn.nextInt();
+            sn.nextLine();
+            System.out.println("1. Khách Hàng Sinh Hoạt");
+            System.out.println("2. Khách Hàng Sản Xuất");
+            System.out.print("Loại Khách Hàng?: ");
+            int loaiKhachHang = sn.nextInt();
+            sn.nextLine();
+            switch (loaiKhachHang) {
+                case 1:
+                    kh[i] = new KhachHangSinhHoat(maKhachHang, tenKhachHan, diaChi, soDienThoai, chiSoDau, chiSoCuoi, diaChi);
+                    break;
+                case 2:
+                    System.out.println("1. Sản Xuất Nhỏ");
+                    System.out.println("1. Sản Xuất Trung Bình");
+                    System.out.println("1. Sản Xuất Lớn");
+                    System.out.print("Loại Hình Sản Xuất?: ");
+                    int loaihinhSX = sn.nextInt();
+                    sn.nextLine();
+                    kh[i] = new KhachHangSanXuat(loaihinhSX, maKhachHang, tenKhachHan, diaChi, soDienThoai, chiSoDau, chiSoCuoi);
+                    break;
+            }
+        }
+    }
+
+    public void xuat() {
+        System.out.println("Danh sách khách hàng sinh hoạt");
+        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s", "Mã Khách Hàng",
+                "Tên Khách Hàng", "Địa Chỉ", "Số Điện Thoại", "Chỉ Số Đầu",
+                "Chỉ Số Cuối", "Tổng Tiền");
+        for (int i = 0; i < kh.length; i++) {
+            if (kh[i] instanceof KhachHangSinhHoat) {
+                System.out.printf("\n%-15s%-15s%-15s%-15s%-15s%-15s%-15s",
+                        kh[i].getMaKhachHang(), kh[i].getTenKhachHang(),
+                        kh[i].getDiaChi(), kh[i].getSoDienThoai(),
+                        kh[i].getChiSoDau(), kh[i].getChiSoCuoi(), kh[i].tienDien());
+            }
+        }
+        System.out.println("\n\nDanh sách khách hàng sản xuất");
+        System.out.printf("%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s", "Mã Khách Hàng",
+                "Tên Khách Hàng", "Địa Chỉ", "Số Điện Thoại", "Loại sản xuất",
+                "Chỉ Số Đầu", "Chỉ Số Cuối", "Tổng Tiền");
+        for (int i = 0; i < kh.length; i++) {
+            if (kh[i] instanceof KhachHangSanXuat) {
+                System.out.printf("\n%-15s%-15s%-15s%-15s%-15s%-15s%-15s%-15s",
+                        kh[i].getMaKhachHang(), kh[i].getTenKhachHang(),
+                        kh[i].getDiaChi(), kh[i].getSoDienThoai(),
+                        ((KhachHangSanXuat) kh[i]).getLoaihinhSX(),
+                        kh[i].getChiSoDau(), kh[i].getChiSoCuoi(), kh[i].tienDien());
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        KhachHangSinhHoat khsh = new KhachHangSinhHoat();
-        KhachHangSanXuat khsx = new KhachHangSanXuat();
-        System.out.println("***");
-        khsh.setChiSoCuoi(500);
-        khsh.setChiSoDau(200);
-        System.out.println("Tiền điện khách hàng sinh hoạt phải trả: " + khsh.tienDien());
-        System.out.println("--------------------------------------");
-        khsx.setChiSoCuoi(500);
-        khsx.setChiSoDau(200);
-        khsx.setLoaihinhSX(3);
-        System.out.println("Tiền điện khách hàng sản xuất loại " + khsx.getLoaihinhSX() + " phải trả là: " + khsx.tienDien());
+        Scanner sn = new Scanner(System.in);
+        int n = 0;
+        while (n <= 0) {
+            System.out.print("Số Khách Hàng: ");
+            n = sn.nextInt();
+            sn.nextLine();
+        }
+        TEST01 baikt = new TEST01(n);
+        baikt.nhap();
+        baikt.xuat();
     }
 }

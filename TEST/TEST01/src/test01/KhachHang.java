@@ -7,6 +7,7 @@
 - Chỉ số cuối tháng
  */
 package test01;
+
 /**
  *
  * @author veget
@@ -24,7 +25,8 @@ public abstract class KhachHang {
         //
     }
 
-    public KhachHang(String maKhachHang, String tenKhachHang, String diaChi, int soDienThoai, int chiSoDau, int chiSoCuoi) {
+    public KhachHang(String maKhachHang, String tenKhachHang, String diaChi,
+            int soDienThoai, int chiSoDau, int chiSoCuoi) {
         this.maKhachHang = maKhachHang;
         this.tenKhachHang = tenKhachHang;
         this.diaChi = diaChi;
