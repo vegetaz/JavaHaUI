@@ -37,8 +37,7 @@ public class DBConnection {
         }
     }
 
-    public DBConnection(String url, String username,
-            String pass) {
+    public DBConnection(String url, String username, String pass) {
         try {
             //call driver
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
