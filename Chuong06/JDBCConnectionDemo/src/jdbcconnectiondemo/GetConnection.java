@@ -16,7 +16,8 @@ public class GetConnection {
     String password;
     String url;
     Connection conn;
-    public void openConnection() {
+//    public void openConnection() {
+    public GetConnection() {
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream("database.properties"));
