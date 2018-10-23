@@ -12,19 +12,26 @@ import java.util.Properties;
  * @author veget
  */
 public class GetConnection {
-    String user;
-    String password;
-    String url;
-    Connection conn;
+    private String user;
+    private String password;
+    private String url;
+    private String driver;
+    private Connection conn;
 //    public void openConnection() {
     public GetConnection() {
         Properties prop = new Properties();
         try {
-            prop.load(new FileInputStream("database.properties"));
-            user = prop.getProperty("user");
-            password = prop.getProperty("password");
-            url = prop.getProperty("url");
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            try (FileInputStream fis = new FileInputStream("database.properties")) {
+                prop.load(fis);
+            }
+//            FileInputStream fis = new FileInputStream("database.properties");
+//            prop.load(fis);
+//            fis.close();
+            user = prop.getProperty("jdbc.user");
+            password = prop.getProperty("jdbc.password");
+            url = prop.getProperty("jdbc.url");
+            driver = prop.getProperty("jdbc.driver");
+            Class.forName(driver);
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected!");
         } catch (ClassNotFoundException | SQLException | IOException ex) {
