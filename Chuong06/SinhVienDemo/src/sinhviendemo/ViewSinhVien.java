@@ -35,7 +35,7 @@ public class ViewSinhVien {
                 System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", id, name, age, address, gpa);
             }
         } catch (SQLException ex) {
-
+            System.out.println("Lỗi: " + ex.getMessage());
         }
     }
 }
