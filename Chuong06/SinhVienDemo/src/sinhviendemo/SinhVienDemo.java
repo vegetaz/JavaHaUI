@@ -17,6 +17,10 @@ public class SinhVienDemo {
     public static void main(String[] args) {
         ViewSinhVien viewsv = new ViewSinhVien();
         viewsv.viewSV();
+        SortSinhVien sortsv = new SortSinhVien();
+        sortsv.sortSV();
+        SearchSinhVien searchsv = new SearchSinhVien();
+        searchsv.searchSV();
     }
     
 }
