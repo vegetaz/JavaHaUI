@@ -24,12 +24,15 @@ public class SortSinhVien {
         try {
             pst = conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
+            System.out.println("Danh sách sinh viên sau khi sắp xếp");
+            System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", "ID", "Tên", "Tuổi", "Địa chỉ", "Điểm trung bình");
             while(rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 int age = rs.getInt("age");
                 String address = rs.getString("address");
                 float gpa = rs.getFloat("gpa");
+                System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", id, name, age, address, gpa);
             }
         } catch (SQLException e) {
             System.out.println("Lỗi: " + e.getMessage());
