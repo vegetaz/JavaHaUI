@@ -23,12 +23,12 @@ public class SinhVienDemo {
          * sortsv.sortSV(); SearchSinhVien searchsv = new SearchSinhVien();
          * searchsv.searchSV();
          */
-//        InsertSinhVien issv = new InsertSinhVien();
-//        issv.insertSV();
         ViewSinhVien viewsv = new ViewSinhVien();
         ArrayList<SinhVien> as = viewsv.viewSV();
-        DeleteSinhVien des = new DeleteSinhVien();
-        des.deleteSV();
+//        DeleteSinhVien des = new DeleteSinhVien();
+//        des.deleteSV();
+        InsertSinhVien issv = new InsertSinhVien();
+        issv.insertSV();
         viewsv.viewSV();
     }
 
