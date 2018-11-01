@@ -70,7 +70,7 @@ public class SinhVien {
 
     @Override
     public String toString() {
-        return "SinhVien{" + "id=" + id + ", name=" + name + ", age=" + age + ", address=" + address + ", gpa=" + gpa + '}';
+        return String.format("%-12s%-18s%-6s%-25s%-18s\n", id, name, age, address, gpa);
     }
 
 }
