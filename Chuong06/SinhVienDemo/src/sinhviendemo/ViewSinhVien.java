@@ -23,7 +23,7 @@ public class ViewSinhVien {
     final String sql = "SELECT * FROM tblsinhvien";
 
     public ArrayList<SinhVien> viewSV() {
-        ArrayList<SinhVien> sv = new ArrayList();
+        ArrayList<SinhVien> asv = new ArrayList<SinhVien>();
         try {
             pst = conn.prepareStatement(sql);
             ResultSet rs = pst.executeQuery();
@@ -35,11 +35,13 @@ public class ViewSinhVien {
                 int age = rs.getInt("age");
                 String address = rs.getString("address");
                 float gpa = rs.getFloat("gpa");
+//                SinhVien sv = new SinhVien(id, name, age, address, gpa);
+//                asv.add(sv);
                 System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", id, name, age, address, gpa);
             }
         } catch (SQLException ex) {
             System.out.println("Lỗi: " + ex.getMessage());
         }
-        return sv;
+        return asv;
     }
 }
