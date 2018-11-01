@@ -23,6 +23,7 @@ public class InsertSinhVien {
     
     Scanner sc = new Scanner(System.in);
     public void insertSV() {
+        System.out.println("Nhập thông tin sinh viên cần thêm");
         System.out.print("Tên: ");
         String name = sc.nextLine();
         System.out.print("Tuổi: ");
@@ -33,6 +34,7 @@ public class InsertSinhVien {
         System.out.print("Điểm trung bình: ");
         float gpa = sc.nextFloat();
         sc.nextLine();
+        System.out.println("Thêm thành công!");
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, name);

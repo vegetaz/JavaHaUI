@@ -19,7 +19,7 @@ public class SinhVienConnection {
     final String url = "jdbc:mysql://localhost:3306/demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
     final String user = "root";
     final String password = "25101989";
-    final String driver = "com.mysql.jdbc.Driver";
+    final String driver = "com.mysql.cj.jdbc.Driver";
 
     public Connection getConnection() {
         try {

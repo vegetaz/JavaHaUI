@@ -6,9 +6,9 @@
 package sinhviendemo;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -19,14 +19,14 @@ public class ViewSinhVien {
 
     SinhVienConnection svcon = new SinhVienConnection();
     Connection conn = svcon.getConnection();
-    PreparedStatement pst;
+    //Statement st;
     final String sql = "SELECT * FROM tblsinhvien";
 
     public ArrayList<SinhVien> viewSV() {
-        ArrayList<SinhVien> asv = new ArrayList<SinhVien>();
+        ArrayList<SinhVien> asv = new ArrayList();
         try {
-            pst = conn.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
             System.out.println("Danh sách sinh viên");
             System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", "ID", "Tên", "Tuổi", "Địa chỉ", "Điểm trung bình");
             while (rs.next()) {
