@@ -27,6 +27,7 @@ public class SinhVienDemo {
         SortSinhVien sors = new SortSinhVien();
         SearchSinhVien sears = new SearchSinhVien();
         SearchSinhVienT searst = new SearchSinhVienT();
+        UpdateSinhVien upd = new UpdateSinhVien();
         int choice;
         sc = new Scanner(System.in);
         do {
@@ -36,8 +37,9 @@ public class SinhVienDemo {
             System.out.println("3. Tìm kiếm sinh viên theo ID");
             System.out.println("4. Tìm kiếm sinh viên theo tên");
             System.out.println("5. Sắp xếp sinh viên theo tên");
-            System.out.println("6. Xoá sinh viên");
-            System.out.println("7. Thoát chương trình");
+            System.out.println("6. Cập nhật sinh viên theo ID");
+            System.out.println("7. Xoá sinh viên");
+            System.out.println("8. Thoát chương trình");
             System.out.print("Chọn chức năng: ");
             choice = sc.nextInt();
             switch (choice) {
@@ -57,13 +59,16 @@ public class SinhVienDemo {
                     sors.sortSV();
                     break;
                 case 6:
-                    dels.deleteSV();
+                    upd.update();
                     break;
                 case 7:
+                    dels.deleteSV();
+                    break;
+                case 8:
                     System.out.println("Thoát...");
                     break;
             }
-        } while (choice != 7);
+        } while (choice != 8);
     }
 
 }
