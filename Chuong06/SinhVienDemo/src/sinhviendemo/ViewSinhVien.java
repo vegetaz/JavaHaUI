@@ -5,11 +5,13 @@
  */
 package sinhviendemo;
 
+import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -22,7 +24,7 @@ public class ViewSinhVien {
     final String sql = "SELECT * FROM tblsinhvien";
     PreparedStatement pst;
     ResultSet rs;
-    
+
     public ArrayList<SinhVien> getAllSinhVien() {
         ArrayList<SinhVien> asv = new ArrayList();
         try {
@@ -48,16 +50,21 @@ public class ViewSinhVien {
         }
         return asv;
     }
-    
+
     public void viewSinhVien() {
-        getAllSinhVien();
+        //getAllSinhVien();
+        Iterator ir = getAllSinhVien().iterator(); //Thêm, sử dụng Iterator mới đúng điệu!
         System.out.println("Danh sách sinh viên");
         System.out.printf("%-12s%-18s%-6s%-25s%-18s\n", "ID", "Tên", "Tuổi", "Địa chỉ", "Điểm trung bình");
 //        for (SinhVien svi : getAllSinhVien()) {
 //            System.out.println(svi);
 //        }
-        getAllSinhVien().forEach((svi) -> {
+//        getAllSinhVien().forEach((svi) -> {
+//            System.out.println(svi);
+//        });
+        while (ir.hasNext()) {
+            SinhVien svi = (SinhVien) ir.next();
             System.out.println(svi);
-        });
+        }
     }
 }
