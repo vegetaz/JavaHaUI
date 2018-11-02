@@ -21,7 +21,6 @@ public class SinhVienDemo {
 
     public static void main(String[] args) {
         ViewSinhVien viewsv = new ViewSinhVien();
-        ArrayList<SinhVien> as = viewsv.viewSV();
         InsertSinhVien ins = new InsertSinhVien();
         DeleteSinhVien dels = new DeleteSinhVien();
         SortSinhVien sors = new SortSinhVien();
@@ -47,7 +46,7 @@ public class SinhVienDemo {
                     ins.insertSV();
                     break;
                 case 2:
-                    viewsv.viewSV();
+                    viewsv.viewSinhVien();
                     break;
                 case 3:
                     sears.searchSV();
