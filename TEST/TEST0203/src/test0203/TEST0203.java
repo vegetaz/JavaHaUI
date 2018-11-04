@@ -74,7 +74,7 @@ public class TEST0203 {
                     sm.updateSV();
                     break;
                 case 5:
-                    //Tìm kiếm học bổng
+                    sm.HocBong();
                     break;
                 case 6:
                     sm.sxN();
