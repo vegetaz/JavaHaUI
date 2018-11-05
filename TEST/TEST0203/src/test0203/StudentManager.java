@@ -199,7 +199,6 @@ public class StudentManager {
         for (Student st : als) {
             if (st.getAvgmark() >= 3.8) {
                 ls.add(st);
-                System.out.println("");
             }
         }
         System.out.println(ls);
