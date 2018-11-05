@@ -74,7 +74,9 @@ public class TEST0203 {
                     sm.updateSV();
                     break;
                 case 5:
-                    sm.HocBong();
+                    sm.HocBong30();
+                    sm.HocBong35();
+                    sm.HocBong38();
                     break;
                 case 6:
                     sm.sxN();
