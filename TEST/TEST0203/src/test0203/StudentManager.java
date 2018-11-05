@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -191,15 +190,45 @@ public class StudentManager {
         }
     }
 
-    public void HocBong() {
+    public void HocBong38() {
         ArrayList<Student> als = getAllStudent();
-        List<Student> ls = new ArrayList<Student>();
+        ArrayList<Student> ls = new ArrayList<Student>();
         System.out.println("Danh sách sinh viên có học bổng 3 000 000 đồng/tháng");
         System.out.printf("%-12s%-15s%-22s%-12s%-11s%-22s%-16s\n", "ID",
                 "Mã sinh viên", "Họ tên", "Ngày sinh", "Giới tính", "Quê quán",
                 "Điểm trung bình");
         for (Student st : als) {
             if (st.getAvgmark() >= 3.8) {
+                ls.add(st);
+            }
+        }
+        System.out.println(ls);
+    }
+
+    public void HocBong35() {
+        ArrayList<Student> als = getAllStudent();
+        ArrayList<Student> ls = new ArrayList<Student>();
+        System.out.println("Danh sách sinh viên có học bổng 2 000 000 đồng/tháng");
+        System.out.printf("%-12s%-15s%-22s%-12s%-11s%-22s%-16s\n", "ID",
+                "Mã sinh viên", "Họ tên", "Ngày sinh", "Giới tính", "Quê quán",
+                "Điểm trung bình");
+        for (Student st : als) {
+            if (3.5 <= st.getAvgmark() && st.getAvgmark() < 3.8) {
+                ls.add(st);
+            }
+        }
+        System.out.println(ls);
+    }
+
+    public void HocBong30() {
+        ArrayList<Student> als = getAllStudent();
+        ArrayList<Student> ls = new ArrayList<Student>();
+        System.out.println("Danh sách sinh viên có học bổng 1 200 000 đồng/tháng");
+        System.out.printf("%-12s%-15s%-22s%-12s%-11s%-22s%-16s\n", "ID",
+                "Mã sinh viên", "Họ tên", "Ngày sinh", "Giới tính", "Quê quán",
+                "Điểm trung bình");
+        for (Student st : als) {
+            if (3.0 <= st.getAvgmark() && st.getAvgmark() < 3.5) {
                 ls.add(st);
             }
         }
