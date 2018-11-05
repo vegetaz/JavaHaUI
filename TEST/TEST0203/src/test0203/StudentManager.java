@@ -117,13 +117,15 @@ public class StudentManager {
         sc.nextLine();
         try {
             pst = conn.prepareStatement(sql);
-            pst.setString(1, code);
-            pst.setString(2, name);
-            pst.setString(3, dob);
-            pst.setString(4, gender);
-            pst.setString(5, pob);
-            pst.setFloat(6, avgmark);
+//            Chú ý vị trí của các biến so với câu lệnh SQL
+            pst.setString(1, name);
+            pst.setString(2, dob);
+            pst.setString(3, gender);
+            pst.setString(4, pob);
+            pst.setFloat(5, avgmark);
+            pst.setString(6, code);
             pst.executeUpdate();
+            System.out.println("Cập nhật sinh viên thành công!");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
