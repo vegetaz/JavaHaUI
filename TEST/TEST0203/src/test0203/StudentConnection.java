@@ -19,10 +19,8 @@ public class StudentConnection {
     private final String user = "root";
     private final String password = "25101989";
     private final String url = "jdbc:mysql://localhost:3306/vanvannguyen"
-            + "?useUnicode=yes"
-            + "&characterEncoding=UTF-8"
-            + "&useSSL=false";
-    private final String driver = "com.mysql.jdbc.Driver";
+            + "?useSSL=false";
+    private final String driver = "com.mysql.cj.jdbc.Driver";
 
     public Connection getCon() {
         try {
