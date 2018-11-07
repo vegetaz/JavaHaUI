@@ -19,5 +19,8 @@ public class sortN implements Comparator<Student> {
         return o2.getName().compareTo(o1.getName());
 //        Sắp xếp theo tên tăng dần
 //        return o1.getName().compareTo(o2.getName());
+//        String name1 = o1.getName().substring(o1.getName().lastIndexOf(" "));
+//        String name2 = o2.getName().substring(o2.getName().lastIndexOf(" "));
+//        return name1.compareTo(name2);
     }
 }
