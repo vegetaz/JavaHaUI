@@ -49,6 +49,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 180));
         setMinimumSize(new java.awt.Dimension(400, 180));
+        setResizable(false);
         setSize(new java.awt.Dimension(400, 180));
 
         jLabel1.setText("Username");
@@ -113,7 +114,7 @@ public class Login extends javax.swing.JFrame {
                 Welcome w = new Welcome();
                 w.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(null, "Error!");
+                JOptionPane.showMessageDialog(null, "Logging Failed!");
             }
         } catch (HeadlessException | SQLException e) {
         }
