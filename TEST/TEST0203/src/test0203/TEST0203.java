@@ -77,6 +77,7 @@ public class TEST0203 {
                     sm.HocBong30();
                     sm.HocBong35();
                     sm.HocBong38();
+//                    sm.hocBongNew();
                     break;
                 case 6:
                     sm.sxN();

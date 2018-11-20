@@ -234,4 +234,19 @@ public class StudentManager {
         }
         System.out.println(ls);
     }
+    
+    public void hocBongNew() {
+        ir = getAllStudent().iterator();
+        System.out.println("Danh sách sinh viên có học bổng");
+        System.out.printf("%-12s%-15s%-22s%-12s%-11s%-22s%-16s\n", "ID",
+                "Mã sinh viên", "Họ tên", "Ngày sinh", "Giới tính", "Quê quán",
+                "Điểm trung bình");
+        while (ir.hasNext()) {
+            Student st = (Student) ir.next();
+            if (3.8 <= st.getAvgmark()) {
+                System.out.println(st);
+            }
+            
+        }
+    }
 }
